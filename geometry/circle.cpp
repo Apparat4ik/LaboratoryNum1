@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-int circle(double *A, int r, int alpha){      // в функцию передаются значения радиуса окружности и агла альфа для площади кругового сектора
+int circle(double *A, int r, int alpha){      // в функцию передаются значения радиуса окружности и агла альфа для площади кругового сектора.
     if (r < 0){
         return 0;
     }
