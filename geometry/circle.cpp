@@ -1,13 +1,19 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-void circle(double *A, int r, int alpha){      // в функцию передаются значения радиуса окружности и агла альфа для площади кругового сектора
-    double lenght_cir = 2 * M_PI * r;
+int circle(double *A, int r, int alpha){      // в функцию передаются значения радиуса окружности и агла альфа для площади кругового сектора
+    if (r < 0 || alpha < 0){
+        return 0;
+    }
+    
+        double lenght_cir = 2 * M_PI * r;
     A[0] = lenght_cir;
     double square_cir = M_PI * r * r;
     A[1] = square_cir;
     double area_cir_sector = square_cir * alpha / 360;
     A[2] = area_cir_sector;
+
+
 }
 
 void trapezoid(double *A, int a, int b, int c, int d, int h){    // здесь передаются значения всех сторон и высоты
@@ -19,11 +25,11 @@ void trapezoid(double *A, int a, int b, int c, int d, int h){    // здесь �
     A[2] = perimeter;
 }
 
-int main(){
-    double ACir[3];       // массивы, куда будут записываться найденые значения
+int main(){ 
+    double ACir[] =  {0, 0, 0};       // массивы, куда будут записываться найденые значения
     double Atrap[3];
 
-    circle(ACir, 3, 40);
+    circle(ACir, 1, 40);
     std::cout << "lenght of circle: ";      
     std::cout << ACir[0] << std::endl;      //вывод всех значений по индексам соответствующих массивов
     std::cout << "sqare of circle: ";
